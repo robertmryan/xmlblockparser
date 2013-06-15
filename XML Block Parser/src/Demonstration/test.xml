@@ -1,0 +1,36 @@
+<Succession SuccessionID="succession1">
+    <LinkedSuccession>
+        <Succession SuccessionID="succession1.1"/>
+        <Succession SuccessionID="succession1.2"/>
+    </LinkedSuccession>
+    <SUF>
+        <SeeAlsoSuccession>
+            <Succession SuccessionID="succession2.1"/>
+            <Succession SuccessionID="succession2.2"/>
+        </SeeAlsoSuccession>
+    </SUF>
+    <Plugins>
+        <Plugin PluginIdent="plugin1"/>
+        <Plugin PluginIdent="plugin2"/>
+    </Plugins>
+    <Card>
+        <Actives>
+            <Active activeNo="active1">
+                <Machs>
+                    <Mach Mach="mach1a"/>
+                    <Mach Mach="mach1b"/>
+                </Machs>
+            </Active>
+            <Active activeNo="active2">
+                <Machs>
+                    <Mach Mach="mach2a"/>
+                    <Mach Mach="mach2b"/>
+                </Machs>
+            </Active>
+        </Actives>
+    </Card>
+    <Tests>
+        <Test>Test #1</Test>
+        <Test>Test #2</Test>
+    </Tests>
+</Succession>
