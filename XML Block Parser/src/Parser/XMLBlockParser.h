@@ -65,7 +65,9 @@ typedef void (^XMLParserEndElementBlock)(NSArray *elementNames, NSString *value)
 
     [parser parse];
 
- @see [The XMLBlockParser project on github](http://www.github.com/robertmryan/xml)
+ ## See also
+
+ - [The XMLBlockParser project on github](http://www.github.com/robertmryan/xml)
 
  @warning Note, do not set the `delegate` for this parser, as it is its own `NSXMLParserDelegate`.
  
