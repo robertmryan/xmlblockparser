@@ -10,11 +10,6 @@ This is a sample block-based XML parser. For documentation for the `XMLBlockPars
 
 This was developed using Xcode 4.6.3 and employs automatic reference counting (ARC).
 
-## Contact information
-
-If you have any questions, do not hesitate to contact me at:
-
 Rob Ryan
-robert.ryan@mindspring.com
 
-18 December 2012
+15 June 2013
