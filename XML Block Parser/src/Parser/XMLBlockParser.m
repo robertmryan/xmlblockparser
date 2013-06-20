@@ -17,11 +17,6 @@
 
 @implementation XMLBlockParser
 
-- (void)dealloc
-{
-    NSLog(@"%s", __FUNCTION__);
-}
-
 - (void)setDelegate:(id<NSXMLParserDelegate>)delegate
 {
     NSLog(@"%s: You should not set delegate for this class", __FUNCTION__);
@@ -70,7 +65,8 @@
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
 {
-    NSLog(@"%s: error = %@", __FUNCTION__, parseError);
+    if (self.errorBlock)
+        self.errorBlock(parseError);
 }
 
 @end

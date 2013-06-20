@@ -87,6 +87,14 @@
             [array addObject:value];
         }
     };
+
+    // handler for any errors
+
+    parser.errorBlock = ^(NSError *error) {
+        NSLog(@"%s: error: %@", __FUNCTION__, error);
+    };
+
+    // now parse
     
     [parser parse];
 

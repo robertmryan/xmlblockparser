@@ -15,6 +15,10 @@ typedef void (^XMLParserBeginElementBlock)(NSArray *elementNames, NSDictionary *
 
 typedef void (^XMLParserEndElementBlock)(NSArray *elementNames, NSString *value);
 
+/// The `typedef` for the block to be called in `parseErrorOccurred`, returning the error received.
+
+typedef void (^XMLParserErrorBlock)(NSError *error);
+
 /** A block-based rendition of NSXMLParser
  
  This is a block-based implementation of the NSXMLParser. The notion here is to abstract the implementation details
@@ -63,6 +67,12 @@ typedef void (^XMLParserEndElementBlock)(NSArray *elementNames, NSString *value)
         // Do here any parsing of the characters received between the starting element tag and the ending element tag
     };
 
+    parser.errorBlock = ^(NSError *error) {
+        NSLog(@"%s: error: %@", __FUNCTION__, error);
+ 
+        // Do any addition error handling you want here
+    };
+
     [parser parse];
 
  ## See also
@@ -88,10 +98,17 @@ typedef void (^XMLParserEndElementBlock)(NSArray *elementNames, NSString *value)
 
 /** The block to be executed when the element ends
 
- This is used for the parsing of the characters received by `foundCharacters`, namely 
+ This is used for the parsing of the characters received by `foundCharacters`, namely
  those characters received after `didStartElement` but before `didEndElement`.
  */
 
 @property (nonatomic, copy) XMLParserEndElementBlock endElementBlock;
+
+/** The block to be executed if error occurs
+
+ This is used to handle any parser errors returned.
+ */
+
+@property (nonatomic, copy) XMLParserErrorBlock errorBlock;
 
 @end
